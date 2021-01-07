@@ -9,32 +9,39 @@
     button {border:none; background-color:transparent;}
     i {
       color: white;
+      font-size: 1.2em;
+      padding: 4px;
+      margin: 3px;
       }
     #player { 
       box-shadow: -3px 3px 2px rgba(0,0,0,0.5);
 
     }
+    #empty {
+      
+      flex-grow: 1;
+    }
   </style>
 
 </head>
 <body>
-  <div id="player" style="width: 800px; height: 600px;">
+  <div id="player" style="width: 800px; height: 600px; display: flex; flex-direction: column;">
 
-    <div class="js-video-container" style="width: 100%; height: 100%"></div>
+    <div class="js-video-container" style="flex-grow: 1;"></div>
 
-    <div style="background-color:black">
+    <div style="background-color:black; line-height: 1.3; display: flex;">
       <button class="js-play-button"><i class="fa fa-play"></i></button>
       <button class="js-pause-button"><i class="fas fa-pause"></i></button>
-
-      <!-- <button style="border:none;" class="js-volume-button">Volume</button>
-      <button style="border:none;" class="js-mute-button" hidden>Mute</button>
-      <button style="border:none;" class="js-fullscreen-button">Fullscreen</button> -->
+      <button class="js-volume-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+      <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+      <div id='empty'></div>
+      <button style="border:none;" class="js-fullscreen-button"><i class="fa fa-expand" aria-hidden="true"></i></button>
     </div>
-    <div style="color: white;">
+    <!-- <div style="color: white;">
       <span class="js-current-time"></span>
       —
       <span class="js-duration"></span>
-    </div>
+    </div> -->
 
     <!-- <div class="js-progress" style="background-color: grey;">
       <div class="js-progress-slider" style="background-color: red;">Прогресс</div>
